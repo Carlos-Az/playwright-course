@@ -5,9 +5,10 @@ on:
 jobs:
     playwrightstests:
         runs-on: ubuntu-latest
-        container: mcr.microsoft.com/playwright:v1.29.1-focal
-        env:
-          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        container: 
+          image: mcr.microsoft.com/playwright:v1.29.1-focal
+          env:
+            ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         steps: 
         - name: Checkout repository
           uses: actions/checkout@v2
